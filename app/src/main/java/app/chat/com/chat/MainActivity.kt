@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Once
+     * Once data is here - display it
      */
     private fun setupAdapter(data: ArrayList<Message>){
         val linearLayoutManager = LinearLayoutManager(this)
@@ -83,6 +83,8 @@ class MainActivity : AppCompatActivity() {
         mainActivityRecyclerView.adapter = MessageAdapter(data) {
             Toast.makeText(this, "${it.text} clicked", Toast.LENGTH_SHORT).show()
         }
+
+        //scroll to bottom
         mainActivityRecyclerView.scrollToPosition(data.size - 1)
     }
 
